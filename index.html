@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Naisha Suda | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B2433;
+    --muted: #556070;
+    --paper: #F6F7F9;
+    --line: #DCE0E6;
+    --scarlet: #C8102E;
+    --panel: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+  }
+  a { color: var(--scarlet); }
+  a:focus-visible { outline: 3px solid var(--scarlet); outline-offset: 3px; }
+  h1, h2, h3 { font-family: "Bricolage Grotesque", Georgia, sans-serif; line-height: 1.15; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(246, 247, 249, 0.95);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: 1000px; margin: 0 auto; padding: 14px 24px;
+    display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  .brand { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
+  .nav-links { display: flex; gap: 22px; list-style: none; }
+  .nav-links a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  .nav-links a:hover { color: var(--scarlet); }
+
+  main { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  /* Hero: the personal statement is the centerpiece */
+  .hero { padding: 96px 0 80px; }
+  .hero .name { font-weight: 600; color: var(--muted); margin-bottom: 18px; font-size: 1.05rem; }
+  .hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    font-weight: 800;
+    max-width: 20ch;
+    letter-spacing: -0.02em;
+    border-left: 8px solid var(--scarlet);
+    padding-left: 24px;
+  }
+  .hero .meta { margin-top: 28px; color: var(--muted); max-width: 60ch; }
+  .hero .links { margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 10px 20px; border-radius: 6px;
+    font-weight: 600; text-decoration: none; border: 2px solid var(--ink); color: var(--ink);
+  }
+  .btn.primary { background: var(--ink); color: #fff; }
+  .btn:hover { border-color: var(--scarlet); }
+  .btn.primary:hover { background: var(--scarlet); border-color: var(--scarlet); }
+
+  h2 { font-size: 2rem; margin-bottom: 32px; }
+
+  /* Skills */
+  .skill-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 36px; }
+  .skill-groups h3 { font-size: 1.15rem; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); }
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .tags li {
+    background: var(--panel); border: 1px solid var(--line);
+    padding: 5px 12px; border-radius: 999px; font-size: 0.95rem;
+  }
+
+  /* Projects as rows, not identical cards */
+  .project {
+    display: grid; grid-template-columns: 220px 1fr; gap: 28px;
+    padding: 28px 0; border-top: 1px solid var(--line);
+  }
+  .project:first-of-type { border-top: none; padding-top: 0; }
+  .project .tech { color: var(--muted); font-size: 0.95rem; }
+  .project h3 { font-size: 1.4rem; margin-bottom: 8px; }
+  .project p { max-width: 62ch; margin-bottom: 12px; }
+  .project .project-links a { font-weight: 600; margin-right: 18px; }
+
+  footer { text-align: center; padding: 40px 24px; color: var(--muted); font-size: 0.95rem; }
+
+  @media (max-width: 640px) {
+    body { font-size: 17px; }
+    .project { grid-template-columns: 1fr; gap: 6px; }
+    .hero { padding: 64px 0 56px; }
+    .hero h1 { padding-left: 16px; border-left-width: 6px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="brand" href="#top">Naisha Suda</a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero" id="statement">
+    <p class="name">Hi, I'm Naisha Suda.</p>
+    <h1>I'm a Business Analytics and IT student at Rutgers who turns data and technology into clear, practical recommendations for businesses.</h1>
+    <p class="meta">BBA in Business Analytics &amp; Information Technology, Rutgers Business School, expected May 2029. Professional Affairs Director, Rutgers WITI.</p>
+    <div class="links">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="https://github.com/testnjtest" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/naishasuda" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill-groups">
+      <div>
+        <h3>Technical</h3>
+        <ul class="tags">
+          <li>Java</li>
+          <li>Android development (Java)</li>
+          <li>Microsoft Excel (certified)</li>
+          <li>Git &amp; GitHub</li>
+          <li>HTML &amp; CSS</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Analytics</h3>
+        <ul class="tags">
+          <li>Data analysis</li>
+          <li>Network &amp; graph analysis</li>
+          <li>Statistics</li>
+          <li>Big-O complexity analysis</li>
+          <li>REST APIs &amp; JSON</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Business &amp; communication</h3>
+        <ul class="tags">
+          <li>Case analysis</li>
+          <li>Marketing strategy</li>
+          <li>Social media content</li>
+          <li>Presenting to stakeholders</li>
+          <li>Leadership &amp; event planning</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <article class="project">
+      <div class="tech">Java, BFS, centrality analysis</div>
+      <div>
+        <h3>Amazon Co-Purchase Network Analysis</h3>
+        <p>Turned tens of thousands of Amazon "customers who also bought" records into a product network, then used breadth-first search to measure how closely any two products are linked and centrality analysis to surface the 5 most influential products in the catalog, the same logic retailers use for recommendations, merchandising and inventory priorities.</p>
+        <div class="project-links">
+          <a href="https://github.com/testnjtest/amazon-product-graph" target="_blank" rel="noopener">View code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="tech">Java, Android Studio, OpenWeatherMap API</div>
+      <div>
+        <h3>Weather Forecast Android App</h3>
+        <p>Built an Android app that turns a ZIP code into a live 5-day forecast by chaining two OpenWeatherMap APIs (geocoding, then forecast), parsing the JSON into a clean list view, and changing the app's theme to match current conditions. Network calls run in the background so the app stays responsive while loading live data.</p>
+        <div class="project-links">
+          <a href="https://github.com/testnjtest/weather-app" target="_blank" rel="noopener">View code</a>
+          <a href="https://testnjtest.github.io/weather-app/" target="_blank" rel="noopener">Project page</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="tech">Strategy, marketing</div>
+      <div>
+        <h3>Johnson &amp; Johnson Case Competition, 1st Place</h3>
+        <p>Placed first out of 40 teams in the 2026 J&amp;J case competition at Rutgers Business School. I developed our team's marketing campaign and helped turn our analysis into a recommendation the judges could act on.</p>
+        <div class="project-links">
+          <a href="https://www.linkedin.com/in/naishasuda" target="_blank" rel="noopener">More on LinkedIn</a>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>I'm looking for internships in consulting, analytics, and technology. The best way to reach me is by email or LinkedIn.</p>
+    <div style="margin-top:20px; display:flex; gap:14px; flex-wrap:wrap;">
+      <a class="btn primary" href="mailto:YOUR-EMAIL@scarletmail.rutgers.edu">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/naishasuda" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer>&copy; 2026 Naisha Suda</footer>
+
+</body>
+</html>
